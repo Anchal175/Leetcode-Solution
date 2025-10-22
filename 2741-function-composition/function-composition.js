@@ -1,0 +1,13 @@
+/**
+ * @param {Function[]} functions
+ * @return {Function}
+ */
+var compose = function(functions) {
+    return function(x) {
+        // Apply functions from right to left
+        for (let i = functions.length - 1; i >= 0; i--) {
+            x = functions[i](x);
+        }
+        return x;
+    }
+};

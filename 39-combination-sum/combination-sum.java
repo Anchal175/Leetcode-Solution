@@ -1,5 +1,5 @@
 class Solution {
-    public void back(int []arr,int tar,int i,ArrayList<Integer>temp,List<List<Integer>> al){
+    public void back(int []arr,int tar,int i,ArrayList<Integer>temp){
         if(tar==0){
             al.add(new ArrayList<>(temp));
             return;
@@ -10,13 +10,14 @@ class Solution {
                 continue;
             }
             temp.add(arr[j]);
-            back(arr,tar-arr[j],j,temp,al);
+            back(arr,tar-arr[j],j,temp);
             temp.remove(temp.size()-1);
         }
         }
+         List<List<Integer>>al=new ArrayList<>();
     public List<List<Integer>> combinationSum(int[] candidates, int target) {
-        List<List<Integer>>al=new ArrayList<>();
-        back(candidates,target,0,new ArrayList<>(),al);
+       
+        back(candidates,target,0,new ArrayList<>());
         return al;
     }
 }

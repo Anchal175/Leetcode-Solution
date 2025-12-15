@@ -15,7 +15,6 @@ class Solution {
     back(nums,index+1,temp);
     temp.remove(temp.size()-1);
 
-
     //undo krega means exclude krrega jb [1,2,3] subset aa jyemge tb
     back(nums,index+1,temp);
         }
